@@ -6,10 +6,13 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const cors          = require('cors');
 
-mongoose.connect('mongodb://localhost/journal-development');
+mongoose.connect('mongodb://localhost/JournalEntries');
 
 const app = express();
+
+app.use(cors()); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
